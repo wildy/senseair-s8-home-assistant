@@ -1,0 +1,18 @@
+[Unit]
+Description=Senseair S8 CO2 Sensor MQTT Publisher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/python-venvs/senseair-s8-co2
+ExecStart=/home/pi/python-venvs/senseair-s8-co2/.venv/bin/python /home/pi/python-venvs/senseair-s8-co2/s8.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
