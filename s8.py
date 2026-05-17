@@ -54,6 +54,7 @@ def publish_discovery():
     """Publish Home Assistant MQTT discovery configuration"""
     discovery_payload = {
         "name": "CO2",
+        "state_class": "measurement",
         "device_class": "carbon_dioxide",
         "state_topic": STATE_TOPIC,
         "unit_of_measurement": "ppm",
